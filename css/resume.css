@@ -246,3 +246,22 @@ body {
     width: 100%;
   }
 }
+
+
+.button {
+  background-color: gray; /* Green */
+  border: none;
+  color: #FFFFFF /* White */;
+  padding: 15px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-left: 10px;
+  border-radius: 3px;
+}
+
+.button:hover {
+  background-color: #BD5D38; /* Orange */
+}
