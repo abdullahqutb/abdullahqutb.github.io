@@ -48,10 +48,12 @@ createApp({
         "You complete me",
       ],
       notes: [
-        "Your laugh is my favorite sound.",
-        "You make every place feel like home.",
-        "You are endlessly kind and brilliant.",
-        "I love how we dream together.",
+        "Your smile is the most beautiful thing I see.",
+        "Even with miles between us, you’re my closest person.",
+        "No pressure, no stress — we’ll be together, inshallah.",
+        "I love how we can be weirdos together.",
+        "Watching movies/series with you is my favorite pastime.",
+        "Our minecraft world is my happy place.",
       ],
       swiper: null,
     };
