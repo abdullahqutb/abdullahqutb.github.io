@@ -7,7 +7,7 @@ createApp({
       loved: false,
       hasInteracted: false,
       // TODO: set to false to enable gate
-      unlocked: true,
+      unlocked: false,
       gateError: "",
       answers: {
         firstName: "",
