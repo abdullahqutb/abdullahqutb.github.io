@@ -3,139 +3,128 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cupid Quest</title>
+    <title>For Mariam, On Her Birthday</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="bg"></div>
+    <div class="backdrop" aria-hidden="true">
+      <div class="glow glow-left"></div>
+      <div class="glow glow-right"></div>
+      <div class="stars"></div>
+    </div>
+
     <main class="page">
-      <header class="topbar">
-        <p class="eyebrow">Valentine Gift</p>
-        <h1>Cupid Quest for Mariam</h1>
-        <div class="progress" aria-label="Quest progress">
-          <span class="dot active" data-dot="0"></span>
-          <span class="dot" data-dot="1"></span>
-          <span class="dot" data-dot="2"></span>
-          <span class="dot" data-dot="3"></span>
-          <span class="dot" data-dot="4"></span>
+      <section class="hero panel">
+        <p class="eyebrow">Birthday letter</p>
+        <h1>For Mariam, with love, honesty, and a better ending to today</h1>
+        <p class="hero-copy">
+          Today did not start the way your birthday should have.
+          I made this to say sorry properly, and to remind you how loved you are through all of it.
+        </p>
+        <div class="hero-actions">
+          <button id="openGiftBtn" class="btn btn-primary" type="button">Read my letter</button>
         </div>
-      </header>
+      </section>
 
-      <section class="screen active" data-screen="0">
-        <div class="card hero-card">
-          <p class="tag">Level 1</p>
-          <h2>A tiny game for the love of my life, Mariam</h2>
+      <section class="grid">
+        <article class="panel panel-soft letter-panel">
+          <p class="section-tag">A real note</p>
+          <h2>What I want you to know tonight</h2>
+          <div id="typedMessage" class="typed-message" aria-live="polite"></div>
+        </article>
+
+        <article class="panel timeline-panel">
+          <p class="section-tag">Even after today</p>
+          <h2>I still choose this</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div>
+                <h3>Us, not the argument</h3>
+              <p>I was wrong about the flowers, and I should have handled it better and faster. You are still the person I want to understand better, not lose.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div>
+                <h3>Your birthday, properly</h3>
+                <p>I wanted your day to feel gentle, loved, and unmistakably about you.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div>
+                <h3>What I mean when I say sorry</h3>
+              <p>I am sorry I ordered the wrong flowers, did not find a good solution in time, and then lost my patience and yelled when I should have stayed softer with you.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel gallery-panel">
+        <div class="gallery-copy">
+          <p class="section-tag">Our little museum</p>
+          <h2>A few of my favorite things about us</h2>
           <p>
-            I turned this Valentine into a fun quest. Beat each level, and unlock the promise.
+            I kept this part small on purpose. These are a few memories that instantly remind me how much
+            love, thought, and beauty you bring into my life.
           </p>
-          <button id="startBtn" class="btn primary">Start the quest</button>
         </div>
-      </section>
 
-      <section class="screen" data-screen="1">
-        <div class="card">
-          <p class="tag">Level 2</p>
-          <h2>Love Quiz</h2>
-          <form id="quizForm" class="quiz-form">
-            <label>
-              What nickname do I call you most? (Hint: it means beautiful)
-              <input name="herNickname" type="text" placeholder="Type your answer" required />
-            </label>
-            <label>
-              What nickname do you call me most? (Hint: it is an animal)
-              <input name="myNickname" type="text" placeholder="Type your answer" required />
-            </label>
-            <label>
-              Our perfect night is:
-              <select name="night" required>
-                <option value="">Choose one</option>
-                <option value="movies">Bridgerton, snacks, and cuddles</option>
-                <option value="couch">Sleep on the couch together</option>
-                <option value="minecraft">Build our house in Minecraft</option>
-                <option value="all">All of the above</option>
-              </select>
-            </label>
-            <label>
-              Which one describes you best?
-              <select name="aboutHer" required>
-                <option value="">Choose one</option>
-                <option value="beautiful">Beautiful</option>
-                <option value="kind">Kind</option>
-                <option value="cute">Cute</option>
-                <option value="all">All of the above</option>
-              </select>
-            </label>
-            <button class="btn primary" type="submit">Check answers</button>
-            <p id="quizFeedback" class="feedback"></p>
-          </form>
+        <div class="gallery-frame">
+          <button id="prevPhoto" class="nav-btn" type="button" aria-label="Previous photo">‹</button>
+          <img id="photo" src="./assets/1.jpg" alt="A memory of us together" />
+          <button id="nextPhoto" class="nav-btn" type="button" aria-label="Next photo">›</button>
         </div>
-      </section>
 
-      <section class="screen" data-screen="2">
-        <div class="card">
-          <p class="tag">Level 3</p>
-          <h2>Catch the hearts</h2>
-          <p>Catch 12 hearts before time ends and unlock the next level.</p>
-          <div class="hunt-stats">
-            <span>Score: <strong id="score">0</strong>/12</span>
-            <span>Time: <strong id="timer">18</strong>s</span>
-          </div>
-          <div id="huntArea" class="hunt-area" aria-live="polite"></div>
-          <button id="huntBtn" class="btn primary">Start heart hunt</button>
-          <p id="huntFeedback" class="feedback"></p>
-        </div>
-      </section>
-
-      <section class="screen" data-screen="3">
-        <div class="card">
-          <p class="tag">Level 4</p>
-          <h2>Spin to reveal my lifetime promise</h2>
-          <div class="fortune-wrap">
-            <div id="fortuneWheel" class="fortune-wheel">💌</div>
-            <p id="fortuneText">Press spin to reveal the promise message.</p>
-          </div>
-          <button id="spinBtn" class="btn primary">Spin</button>
-          <button id="toFinalBtn" class="btn" disabled>Unlock final level</button>
-        </div>
-      </section>
-
-      <section class="screen" data-screen="4">
-        <div class="card final-card">
-          <p class="tag">Final Level 5</p>
-          <h2>I am the luckiest man to have you, Mariam</h2>
-          <p class="subtitle-note">Sorry about today's flowers, I feel really bad I could not make it a perfect valentine.</p>
-
-          <div class="carousel">
-            <button id="prevPhoto" class="icon-btn" type="button" aria-label="Previous photo">‹</button>
-            <img id="photo" src="./assets/1.jpg" alt="Our memory" />
-            <button id="nextPhoto" class="icon-btn" type="button" aria-label="Next photo">›</button>
-          </div>
+        <div class="gallery-meta">
           <p id="photoCaption" class="photo-caption"></p>
-
-          <div class="song-box">
-            <p class="song-title">Perfect</p>
-            <audio
-              id="player"
-              src="./assets/perfect.mp3"
-              preload="auto"
-              playsinline
-              controls
-              autoplay
-              loop
-            ></audio>
-          </div>
-
-          <ul class="promise-list">
-            <li>More late-night talks with no stress, just us.</li>
-            <li>More movie nights and Minecraft adventures.</li>
-            <li>More reasons every day to smile together.</li>
-          </ul>
-
-          <div class="proposal-row">
-            <button id="celebrateBtn" class="btn yes">Send you all my love</button>
-          </div>
-          <p id="finalMessage" class="final-message"></p>
+          <p id="photoCount" class="photo-count"></p>
         </div>
+      </section>
+
+      <section class="grid">
+        <article class="panel wish-panel">
+          <p class="section-tag">Birthday wish</p>
+          <h2>What I want for you this year</h2>
+          <ul class="wish-list">
+            <li>Soft mornings, loud laughs, and fewer reasons to doubt how loved you are.</li>
+            <li>A year that brings you peace without making you shrink your sparkle.</li>
+            <li>More days where I make your life lighter, not heavier.</li>
+          </ul>
+        </article>
+
+        <article class="panel song-panel">
+          <p class="section-tag">Our soundtrack</p>
+          <h2>Press play when you want the full effect</h2>
+          <p class="song-note">
+            I left a romantic track in place for now. If you send me the birthday-love song you want, I can
+            wire it in immediately.
+          </p>
+          <p id="songTitle" class="song-title">Current track: Happy Birthday, darling</p>
+          <audio
+            id="player"
+            src="./assets/birthday.mp3"
+            preload="auto"
+            playsinline
+            controls
+            loop
+          ></audio>
+        </article>
+      </section>
+
+      <section class="panel final-panel">
+        <p class="section-tag">One last thing</p>
+        <h2>Happy birthday, my love</h2>
+        <p class="final-copy">
+          Even on a day that got messy, my heart is still very clear about you.
+        </p>
+        <button id="celebrateBtn" class="btn btn-primary" type="button">Tap for my final wish</button>
+        <p id="finalMessage" class="final-message"></p>
+        <p class="archive-link">
+          <a class="btn btn-ghost" href="./legacy-valentine-quest/index.html">See the valentine page I made before this</a>
+        </p>
       </section>
     </main>
 

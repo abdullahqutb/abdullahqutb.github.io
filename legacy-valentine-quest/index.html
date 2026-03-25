@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cupid Quest Archive</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg"></div>
+    <main class="page">
+      <header class="topbar">
+        <p class="eyebrow">Valentine Gift</p>
+        <h1>Cupid Quest for Mariam</h1>
+        <div class="progress" aria-label="Quest progress">
+          <span class="dot active" data-dot="0"></span>
+          <span class="dot" data-dot="1"></span>
+          <span class="dot" data-dot="2"></span>
+          <span class="dot" data-dot="3"></span>
+          <span class="dot" data-dot="4"></span>
+        </div>
+      </header>
+
+      <section class="screen active" data-screen="0">
+        <div class="card hero-card">
+          <p class="tag">Level 1</p>
+          <h2>A tiny game for the love of my life, Mariam</h2>
+          <p>
+            I turned this Valentine into a fun quest. Beat each level, and unlock the promise.
+          </p>
+          <button id="startBtn" class="btn primary">Start the quest</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="1">
+        <div class="card">
+          <p class="tag">Level 2</p>
+          <h2>Love Quiz</h2>
+          <form id="quizForm" class="quiz-form">
+            <label>
+              What nickname do I call you most? (Hint: it means beautiful)
+              <input name="herNickname" type="text" placeholder="Type your answer" required />
+            </label>
+            <label>
+              What nickname do you call me most? (Hint: it is an animal)
+              <input name="myNickname" type="text" placeholder="Type your answer" required />
+            </label>
+            <label>
+              Our perfect night is:
+              <select name="night" required>
+                <option value="">Choose one</option>
+                <option value="movies">Bridgerton, snacks, and cuddles</option>
+                <option value="couch">Sleep on the couch together</option>
+                <option value="minecraft">Build our house in Minecraft</option>
+                <option value="all">All of the above</option>
+              </select>
+            </label>
+            <label>
+              Which one describes you best?
+              <select name="aboutHer" required>
+                <option value="">Choose one</option>
+                <option value="beautiful">Beautiful</option>
+                <option value="kind">Kind</option>
+                <option value="cute">Cute</option>
+                <option value="all">All of the above</option>
+              </select>
+            </label>
+            <button class="btn primary" type="submit">Check answers</button>
+            <p id="quizFeedback" class="feedback"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="2">
+        <div class="card">
+          <p class="tag">Level 3</p>
+          <h2>Catch the hearts</h2>
+          <p>Catch 12 hearts before time ends and unlock the next level.</p>
+          <div class="hunt-stats">
+            <span>Score: <strong id="score">0</strong>/12</span>
+            <span>Time: <strong id="timer">18</strong>s</span>
+          </div>
+          <div id="huntArea" class="hunt-area" aria-live="polite"></div>
+          <button id="huntBtn" class="btn primary">Start heart hunt</button>
+          <p id="huntFeedback" class="feedback"></p>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="3">
+        <div class="card">
+          <p class="tag">Level 4</p>
+          <h2>Spin to reveal my lifetime promise</h2>
+          <div class="fortune-wrap">
+            <div id="fortuneWheel" class="fortune-wheel">💌</div>
+            <p id="fortuneText">Press spin to reveal the promise message.</p>
+          </div>
+          <button id="spinBtn" class="btn primary">Spin</button>
+          <button id="toFinalBtn" class="btn" disabled>Unlock final level</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="4">
+        <div class="card final-card">
+          <p class="tag">Final Level 5</p>
+          <h2>I am the luckiest man to have you, Mariam</h2>
+          <p class="subtitle-note">Sorry about today's flowers, I feel really bad I could not make it a perfect valentine.</p>
+
+          <div class="carousel">
+            <button id="prevPhoto" class="icon-btn" type="button" aria-label="Previous photo">‹</button>
+            <img id="photo" src="../assets/1.jpg" alt="Our memory" />
+            <button id="nextPhoto" class="icon-btn" type="button" aria-label="Next photo">›</button>
+          </div>
+          <p id="photoCaption" class="photo-caption"></p>
+
+          <div class="song-box">
+            <p class="song-title">Perfect</p>
+            <audio
+              id="player"
+              src="../assets/perfect.mp3"
+              preload="auto"
+              playsinline
+              controls
+              autoplay
+              loop
+            ></audio>
+          </div>
+
+          <ul class="promise-list">
+            <li>More late-night talks with no stress, just us.</li>
+            <li>More movie nights and Minecraft adventures.</li>
+            <li>More reasons every day to smile together.</li>
+          </ul>
+
+          <div class="proposal-row">
+            <button id="celebrateBtn" class="btn yes">Send you all my love</button>
+          </div>
+          <p id="finalMessage" class="final-message"></p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
