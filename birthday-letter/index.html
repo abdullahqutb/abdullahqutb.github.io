@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Mariam, On Her Birthday</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="backdrop" aria-hidden="true">
+      <div class="glow glow-left"></div>
+      <div class="glow glow-right"></div>
+      <div class="stars"></div>
+    </div>
+
+    <main class="page">
+      <section class="hero panel">
+        <p class="eyebrow">Birthday letter</p>
+        <h1>For Mariam, with love, honesty, and a better ending to today</h1>
+        <p class="hero-copy">
+          Today did not start the way your birthday should have.
+          I made this to say sorry properly, and to remind you how loved you are through all of it.
+        </p>
+        <div class="hero-actions">
+          <button id="openGiftBtn" class="btn btn-primary" type="button">Read my letter</button>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="panel panel-soft letter-panel">
+          <p class="section-tag">A real note</p>
+          <h2>What I want you to know tonight</h2>
+          <div id="typedMessage" class="typed-message" aria-live="polite"></div>
+        </article>
+
+        <article class="panel timeline-panel">
+          <p class="section-tag">Even after today</p>
+          <h2>I still choose this</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div>
+                <h3>Us, not the argument</h3>
+              <p>I was wrong about the flowers, and I should have handled it better and faster. You are still the person I want to understand better, not lose.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div>
+                <h3>Your birthday, properly</h3>
+                <p>I wanted your day to feel gentle, loved, and unmistakably about you.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div>
+                <h3>What I mean when I say sorry</h3>
+              <p>I am sorry I ordered the wrong flowers, did not find a good solution in time, and then lost my patience and yelled when I should have stayed softer with you.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel gallery-panel">
+        <div class="gallery-copy">
+          <p class="section-tag">Our little museum</p>
+          <h2>A few of my favorite things about us</h2>
+          <p>
+            I kept this part small on purpose. These are a few memories that instantly remind me how much
+            love, thought, and beauty you bring into my life.
+          </p>
+        </div>
+
+        <div class="gallery-frame">
+          <button id="prevPhoto" class="nav-btn" type="button" aria-label="Previous photo">‹</button>
+          <img id="photo" src="../assets/1.jpg" alt="A memory of us together" />
+          <button id="nextPhoto" class="nav-btn" type="button" aria-label="Next photo">›</button>
+        </div>
+
+        <div class="gallery-meta">
+          <p id="photoCaption" class="photo-caption"></p>
+          <p id="photoCount" class="photo-count"></p>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="panel wish-panel">
+          <p class="section-tag">Birthday wish</p>
+          <h2>What I want for you this year</h2>
+          <ul class="wish-list">
+            <li>Soft mornings, loud laughs, and fewer reasons to doubt how loved you are.</li>
+            <li>A year that brings you peace without making you shrink your sparkle.</li>
+            <li>More days where I make your life lighter, not heavier.</li>
+          </ul>
+        </article>
+
+        <article class="panel song-panel">
+          <p class="section-tag">Our soundtrack</p>
+          <h2>Press play when you want the full effect</h2>
+          <p class="song-note">
+            I left a romantic track in place for now. If you send me the birthday-love song you want, I can
+            wire it in immediately.
+          </p>
+          <p id="songTitle" class="song-title">Current track: Happy Birthday, darling</p>
+          <audio
+            id="player"
+            src="../assets/birthday.mp3"
+            preload="auto"
+            playsinline
+            controls
+            loop
+          ></audio>
+        </article>
+      </section>
+
+      <section class="panel final-panel">
+        <p class="section-tag">One last thing</p>
+        <h2>Happy birthday, my love</h2>
+        <p class="final-copy">
+          Even on a day that got messy, my heart is still very clear about you.
+        </p>
+        <button id="celebrateBtn" class="btn btn-primary" type="button">Tap for my final wish</button>
+        <p id="finalMessage" class="final-message"></p>
+        <p class="archive-link">
+          <a class="btn btn-ghost" href="../legacy-valentine-quest/index.html">See the valentine page I made before this</a>
+        </p>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
